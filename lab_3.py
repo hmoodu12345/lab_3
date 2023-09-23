@@ -4,13 +4,21 @@ while (True):
     name = input("enter emp name")
     if name.lower() == "no":
         break
+
+    if not name.isalpha():
+        print("name must be string")
+        continue
+
     sal = input("enter emp salary")
+
     if sal.lower() == "no":
         break
 
-    print(name.isalpha())
-    if not name.isalpha() or not sal.isdigit():
+    if not sal.isdigit():
+        print("salary must be float")
+
         continue
+
     dic[name] = sal
 
 print("the dictionry is:")
@@ -25,7 +33,7 @@ for i in range(10):
     try:
         num = int(input("enter a number"))
     except:
-        print("wrong value!!")
+        print("wrong input!!")
         c += 1
         continue
 
@@ -46,7 +54,7 @@ try:
     cel = float(input("enter the temperature in Celsius"))
     print(f"the temperature in Fahrenheit is: {9 / 5 * cel + 32}")
 except:
-    print("wrong value!!")
+    print("wrong input!!")
 
 print("===============================")
 print("Q4:")
@@ -57,7 +65,7 @@ try:
         r = a * i
         print(f"{a} * {i} = {r}")
 except:
-    print("wrong value!!")
+    print("wrong input!!")
 
 print("===============================")
 print("Q5:")
